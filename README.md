@@ -7,7 +7,7 @@
 4. Async Javascript & Minify By Using Grunt
 5. Minify HTML File
 
-# pizza.html
+## pizza.html
 1. Reduced Image File Size (Compression & Resizing)
 2. Inline CSS & Minify by using grunt
 3. Inline Minify Javascript File
