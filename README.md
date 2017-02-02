@@ -7,9 +7,53 @@
 4. Async Javascript & Minify By Using Grunt
 5. Minify HTML File
 
-## pizza.html
+## views/pizza.html
 1. Reduced Image File Size (Compression & Resizing)
-2. Inline CSS & Minify by using grunt
-3. Inline Minify Javascript File
-4. Javascript Clear Unnecessary JS Operation (Loops)
+2. Inline CSS & Javascript Minify by using Grunt
 5. Minify HTML File
+
+## views/js/main.js
+1. Javascript Clear Unnecessary JS Operation (Loops)
+* Using getElementById instead of querySelector
+* Moved changeSliderLabel outsize of resizePizzas function
+* Identify values that where constant in loop and cached outside.
+2. Replaced the fixed number of pizzas by looking at height of the screen and fix appropriate number of pizzas in.
+
+## Getting started
+### Setting up a python server, ngrok & Grunt
+
+1. Check out the repository
+2. To inspect the site on your phone, you can run a local server
+
+```
+$> cd /path/to/your-project-folder
+$> python -m SimpleHTTPServer 8080
+```
+
+3. Open a browser and visit localhost:8080
+4. Download and install ngrok to the top-level of your project directory to make your local server accessible remotely.
+
+```
+$> cd /path/to/your-project-folder
+$> ./ngrok http 8080
+```
+
+5. Copy the public URL ngrok gives you (https) and run PageSpeed Insights!
+6. Run package.json file
+
+```
+$ npm install
+```
+
+7. Install Grunt
+
+```
+$ npm install grunt --save-dev
+$ npm install -g grunt-cli
+```
+
+8. Run Gruntfile to minify, uglify and optimize images
+
+```
+$ grunt
+```

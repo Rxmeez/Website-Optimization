@@ -404,15 +404,16 @@ var resizePizzas = function(size) {
 
     // Changes the value for the size of the pizza above the slider
     function changeSliderLabel(size) {
+      var pizzaInnerHTML = document.getElementById("pizzaSize").innerHTML;
         switch (size) {
             case "1":
-                document.querySelector("#pizzaSize").innerHTML = "Small";
+                pizzaInnerHTML = "Small";
                 return;
             case "2":
-                document.querySelector("#pizzaSize").innerHTML = "Medium";
+                pizzaInnerHTML = "Medium";
                 return;
             case "3":
-                document.querySelector("#pizzaSize").innerHTML = "Large";
+                pizzaInnerHTML = "Large";
                 return;
             default:
                 console.log("bug in changeSliderLabel");
@@ -535,7 +536,7 @@ function updatePositions() {
     var phase;
     for (var i = 0; i < items.length; i++) {
         // #optimize: insert currentScrollY variable
-        phase = Math.sin(currentScrollY + (i % 5));
+       phase = Math.sin(currentScrollY + (i % 5));
         items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     }
 
@@ -546,6 +547,7 @@ function updatePositions() {
     if (frame % 10 === 0) {
         var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
         logAverageFrame(timesToUpdatePosition);
+
     }
 }
 
@@ -556,7 +558,8 @@ window.addEventListener('scroll', onScroll);
 document.addEventListener('DOMContentLoaded', function() {
     var cols = 8;
     var s = 256;
-    for (var i = 0; i < 200; i++) {
+    var numofpizzaonscreen = (screen.height/s)*cols
+    for (var i = 0; i < numofpizzaonscreen; i++) {
         var elem = document.createElement('img');
         elem.className = 'mover';
         elem.src = "images/min/pizza.png";
@@ -566,5 +569,6 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.style.top = (Math.floor(i / cols) * s) + 'px';
         document.querySelector("#movingPizzas1").appendChild(elem);
     }
+
     updatePositions();
 });
