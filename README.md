@@ -22,37 +22,37 @@
 ## Getting started
 ### Setting up a python server, ngrok & Grunt
 
-1. Check out the repository
-2. To inspect the site on your phone, you can run a local server
+Check out the repository
+To inspect the site on your phone, you can run a local server
 
 ```
 $> cd /path/to/your-project-folder
 $> python -m SimpleHTTPServer 8080
 ```
 
-3. Open a browser and visit localhost:8080
-4. Download and install ngrok to the top-level of your project directory to make your local server accessible remotely.
+Open a browser and visit localhost:8080
+Download and install ngrok to the top-level of your project directory to make your local server accessible remotely.
 
 ```
 $> cd /path/to/your-project-folder
 $> ./ngrok http 8080
 ```
 
-5. Copy the public URL ngrok gives you (https) and run PageSpeed Insights!
-6. Run package.json file
+Copy the public URL ngrok gives you (https) and run PageSpeed Insights!
+Run package.json file
 
 ```
 $ npm install
 ```
 
-7. Install Grunt
+Install Grunt
 
 ```
 $ npm install grunt --save-dev
 $ npm install -g grunt-cli
 ```
 
-8. Run Gruntfile to minify, uglify and optimize images
+Run Gruntfile to minify, uglify and optimize images
 
 ```
 $ grunt
